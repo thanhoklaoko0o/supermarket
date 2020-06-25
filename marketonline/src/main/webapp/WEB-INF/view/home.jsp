@@ -149,47 +149,14 @@ hideURLbar(){ window.scrollTo(0,1); }
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
-						<li><a href="products.html">Thực phẩm thương hiệu</a></li>
-						<li><a href="household.html">Gia đình</a></li>
-						<li class="dropdown mega-dropdown active"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown">Rau & Trái cây<span
-								class="caret"></span>
-						</a>
-							<div
-								class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="vegetables.html">Rau</a></li>
-										<li><a href="vegetables.html">Trái cây</a></li>
-									</ul>
-								</div>
-							</div></li>
-						<li><a href="kitchen.html">Phòng bếp</a></li>
-						<li><a href="short-codes.html">Short Codes</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Đồ uống<span class="caret"></span></a>
-							<div
-								class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="drinks.html">Nước ngọt</a></li>
-										<li><a href="drinks.html">Nước ép</a></li>
-									</ul>
-								</div>
-							</div></li>
-						<li><a href="pet.html">Thức ăn cho thú cưng</a></li>
-						<li class="dropdown"><a href="#" class="dropdown-toggle"
-							data-toggle="dropdown">Thực phẩm đông lạnh<span class="caret"></span></a>
-							<div
-								class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
-								<div class="w3ls_vegetables">
-									<ul>
-										<li><a href="frozen.html">Đồ ăn nhẹ</a></li>
-										<li><a href="frozen.html">Nonveg</a></li>
-									</ul>
-								</div>
-							</div></li>
-						<li><a href="bread.html">Bánh</a></li>
+						<c:forEach var="item" items="${categoryList}">
+							<li><a href="products.html">${item.name}</a></li>
+						</c:forEach>
+<%--						<li><a href="household.html">Gia đình</a></li>--%>
+<%--						<li class="dropdown mega-dropdown active"><a href="#"--%>
+<%--							class="dropdown-toggle" data-toggle="dropdown">Rau & Trái cây<span--%>
+<%--								class="caret"></span>--%>
+<%--						</a>--%>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -263,7 +230,7 @@ hideURLbar(){ window.scrollTo(0,1); }
 		<div class="wthree_banner_bottom_left_grid_sub"></div>
 		<div class="wthree_banner_bottom_left_grid_sub1">
 			<div class="col-md-4 wthree_banner_bottom_left">
-				<div class="wthree_banner_bottom_left_grid">
+        <div class="wthree_banner_bottom_left_grid">
 					<img src="<c:url value="/assets/user/images/4.jpg"/>" alt=" "
 						class="img-responsive" />
 					<div class="wthree_banner_bottom_left_grid_pos">
@@ -273,28 +240,7 @@ hideURLbar(){ window.scrollTo(0,1); }
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 wthree_banner_bottom_left">
-				<div class="wthree_banner_bottom_left_grid">
-					<img src="<c:url value="/assets/user/images/5.jpg"/>" alt=" "
-						class="img-responsive" />
-					<div class="wthree_banner_btm_pos">
-						<h3>
-							Bộ sản phẩm <span>hoàn hảo</span> của <i>Nguyễn Mart</i>
-						</h3>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 wthree_banner_bottom_left">
-				<div class="wthree_banner_bottom_left_grid">
-					<img src="<c:url value="/assets/user/images/6.jpg"/>" alt=" "
-						class="img-responsive" />
-					<div class="wthree_banner_btm_pos1">
-						<h3>
-							Tiết kiệm <span>lên đến</span> 200.000
-						</h3>
-					</div>
-				</div>
-			</div>
+
 			<div class="clearfix"></div>
 		</div>
 		<div class="clearfix"></div>
@@ -304,171 +250,52 @@ hideURLbar(){ window.scrollTo(0,1); }
 		<div class="container">
 			<h3>Ưu đãi hấp dẫn</h3>
 			<div class="agile_top_brands_grids">
-				<div class="col-md-3 top_brand_left">
-					<div class="hover14 column">
-						<div class="agile_top_brand_left_grid">
-							<div class="tag">
-								<img src="<c:url value="/assets/user/images/tag.png"/>" alt=" "
-									class="img-responsive" />
-							</div>
-							<div class="agile_top_brand_left_grid1">
-								<figure>
-									<div class="snipcart-item block">
-										<div class="snipcart-thumb">
-											<a href="single.html"><img title=" " alt=" "
-												src="<c:url value="/assets/user/images/1.png"/>" /></a>
-											<p>fortune sunflower oil</p>
-											<h4>
-												140.000 <span>200.000</span>
-											</h4>
-										</div>
-										<div class="snipcart-details top_brand_home_details">
-											<form action="checkout.html" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" /> <input
-														type="hidden" name="add" value="1" /> <input
-														type="hidden" name="business" value=" " /> <input
-														type="hidden" name="item_name"
-														value="Fortune Sunflower Oil" /> <input type="hidden"
-														name="amount" value="140.000" /> <input type="hidden"
-														name="discount_amount" value="1.00" /> <input
-														type="hidden" name="currency_code" value="VND" /> <input
-														type="hidden" name="return" value=" " /> <input
-														type="hidden" name="cancel_return" value=" " /> <input
-														type="submit" name="submit" value="Thêm vào giỏ hàng"
-														class="button" />
-												</fieldset>
+				<c:forEach var="product" items="${topFourProduct}">
+					<div class="col-md-3 top_brand_left">
+						<div class="hover14 column">
+							<div class="agile_top_brand_left_grid">
+								<div class="tag">
+									<img src="<c:url value="/assets/user/images/tag.png"/>" alt=" "
+										class="img-responsive" />
+								</div>
+								<div class="agile_top_brand_left_grid1">
+									<figure>
+										<div class="snipcart-item block">
+											<div class="snipcart-thumb">
+												<a href="single.html"><img title=" " alt=" "
+													src="<c:url value="${product.imageUrl}"/>" /></a>
+												<p>${product.name}</p>
+												<h4>
+														${product.price} <span>200.000</span>
+												</h4>
+											</div>
+											<div class="snipcart-details top_brand_home_details">
+												<form action="checkout.html" method="post">
+													<fieldset>
+														<input type="hidden" name="cmd" value="_cart" /> <input
+															type="hidden" name="add" value="1" /> <input
+															type="hidden" name="business" value=" " /> <input
+															type="hidden" name="item_name"
+															value="Fortune Sunflower Oil" /> <input type="hidden"
+															name="amount" value="140.000" /> <input type="hidden"
+															name="discount_amount" value="1.00" /> <input
+															type="hidden" name="currency_code" value="VND" /> <input
+															type="hidden" name="return" value=" " /> <input
+															type="hidden" name="cancel_return" value=" " /> <input
+															type="submit" name="submit" value="Thêm vào giỏ hàng"
+															class="button" />
+													</fieldset>
 
-											</form>
+												</form>
 
+											</div>
 										</div>
-									</div>
-								</figure>
+									</figure>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-3 top_brand_left">
-					<div class="hover14 column">
-						<div class="agile_top_brand_left_grid">
-							<div class="agile_top_brand_left_grid1">
-								<figure>
-									<div class="snipcart-item block">
-										<div class="snipcart-thumb">
-											<a href="single.html"><img title=" " alt=" "
-												src="<c:url value="/assets/user/images/3.png"/>" /></a>
-											<p>basmati rise (5 Kg)</p>
-											<h4>
-												220.000 <span>300.000</span>
-											</h4>
-										</div>
-										<div class="snipcart-details top_brand_home_details">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" /> <input
-														type="hidden" name="add" value="1" /> <input
-														type="hidden" name="business" value=" " /> <input
-														type="hidden" name="item_name" value="basmati rise" /> <input
-														type="hidden" name="amount" value="220.000" /> <input
-														type="hidden" name="discount_amount" value="1.00" /> <input
-														type="hidden" name="currency_code" value="VND" /> <input
-														type="hidden" name="return" value=" " /> <input
-														type="hidden" name="cancel_return" value=" " /> <input
-														type="submit" name="submit" value="Thêm vào giỏ hàng"
-														class="button" />
-												</fieldset>
-											</form>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 top_brand_left">
-					<div class="hover14 column">
-						<div class="agile_top_brand_left_grid">
-							<div class="agile_top_brand_left_grid_pos">
-								<img src="<c:url value="/assets/user/images/offer.png"/>"
-									alt=" " class="img-responsive" />
-							</div>
-							<div class="agile_top_brand_left_grid1">
-								<figure>
-									<div class="snipcart-item block">
-										<div class="snipcart-thumb">
-											<a href="single.html"><img
-												src="<c:url value="/assets/user/images/2.png"/>" alt=" "
-												class="img-responsive" /></a>
-											<p>Pepsi (2 Ltr)</p>
-											<h4>
-												25.000 <span>30.000</span>
-											</h4>
-										</div>
-										<div class="snipcart-details top_brand_home_details">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" /> <input
-														type="hidden" name="add" value="1" /> <input
-														type="hidden" name="business" value=" " /> <input
-														type="hidden" name="item_name" value="Pepsi soft drink" />
-													<input type="hidden" name="amount" value="25.000" /> <input
-														type="hidden" name="discount_amount" value="1.00" /> <input
-														type="hidden" name="currency_code" value="VND" /> <input
-														type="hidden" name="return" value=" " /> <input
-														type="hidden" name="cancel_return" value=" " /> <input
-														type="submit" name="submit" value="Thêm vào giỏ hàng"
-														class="button" />
-												</fieldset>
-											</form>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 top_brand_left">
-					<div class="hover14 column">
-						<div class="agile_top_brand_left_grid">
-							<div class="agile_top_brand_left_grid_pos">
-								<img src="<c:url value="/assets/user/images/offer.png"/>"
-									alt=" " class="img-responsive" />
-							</div>
-							<div class="agile_top_brand_left_grid1">
-								<figure>
-									<div class="snipcart-item block">
-										<div class="snipcart-thumb">
-											<a href="single.html"><img
-												src="<c:url value="/assets/user/images/4.png"/>" alt=" "
-												class="img-responsive" /></a>
-											<p>dogs food (4 Kg)</p>
-											<h4>
-												180.000 <span>220.000</span>
-											</h4>
-										</div>
-										<div class="snipcart-details top_brand_home_details">
-											<form action="#" method="post">
-												<fieldset>
-													<input type="hidden" name="cmd" value="_cart" /> <input
-														type="hidden" name="add" value="1" /> <input
-														type="hidden" name="business" value=" " /> <input
-														type="hidden" name="item_name" value="dogs food" /> <input
-														type="hidden" name="amount" value="180.000" /> <input
-														type="hidden" name="discount_amount" value="1.00" /> <input
-														type="hidden" name="currency_code" value="VND" /> <input
-														type="hidden" name="return" value=" " /> <input
-														type="hidden" name="cancel_return" value=" " /> <input
-														type="submit" name="submit" value="Thêm vào giỏ hàng"
-														class="button" />
-												</fieldset>
-											</form>
-										</div>
-									</div>
-								</figure>
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 				<div class="clearfix"></div>
 			</div>
 		</div>

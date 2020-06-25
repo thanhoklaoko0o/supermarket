@@ -22,4 +22,8 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 	 */
 	List<Product> findAllByNameContaining(String name);
 
+//	List<Product> findProductById(Integer id);
+
+	List<Product> findTop4By();
+
 }
