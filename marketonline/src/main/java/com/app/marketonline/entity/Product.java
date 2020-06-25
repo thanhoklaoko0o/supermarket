@@ -34,7 +34,10 @@ public class Product {
 	
 	@Column(name = "price")
 	private Long price;
-	
+
+	@Column(length = 255)
+	private String description;
+
 	@Column(name = "date_created")
     private Date dateCreated;
 	

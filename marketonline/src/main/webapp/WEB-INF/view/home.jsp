@@ -110,7 +110,7 @@ hideURLbar(){ window.scrollTo(0,1); }
 		<div class="container">
 			<div class="w3ls_logo_products_left">
 				<h1>
-					<a href="index.html"><span>Nguyễn</span> Mart</a>
+					<a href="/home"><span>Nguyễn</span> Mart</a>
 				</h1>
 			</div>
 			<div class="w3ls_logo_products_left1">
@@ -150,7 +150,7 @@ hideURLbar(){ window.scrollTo(0,1); }
 				<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 					<ul class="nav navbar-nav nav_1">
 						<c:forEach var="item" items="${categoryList}">
-							<li><a href="products.html">${item.name}</a></li>
+							<li><a href="/products?category=${item.id}">${item.name}</a></li>
 						</c:forEach>
 <%--						<li><a href="household.html">Gia đình</a></li>--%>
 <%--						<li class="dropdown mega-dropdown active"><a href="#"--%>
@@ -262,7 +262,7 @@ hideURLbar(){ window.scrollTo(0,1); }
 									<figure>
 										<div class="snipcart-item block">
 											<div class="snipcart-thumb">
-												<a href="single.html"><img title=" " alt=" "
+												<a href="/products/${product.id}"><img title=" " alt=" "
 													src="<c:url value="${product.imageUrl}"/>" /></a>
 												<p>${product.name}</p>
 												<h4>

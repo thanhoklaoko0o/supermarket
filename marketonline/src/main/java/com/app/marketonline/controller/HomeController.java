@@ -25,11 +25,8 @@ public class HomeController {
 
 	@GetMapping("/home")
 	public String index(ModelMap model) {
-		List<Category> categoryList = categoryService.getAll();
-		model.addAttribute("categoryList", categoryList);
-
-		List<Product> topFourProduct = productService.getTop4Product();
-		model.addAttribute("topFourProduct", topFourProduct);
+		model.addAttribute("categoryList", categoryService.getAll());
+		model.addAttribute("topFourProduct", productService.getTop4Product());
 		return "home";
 	}
 }
