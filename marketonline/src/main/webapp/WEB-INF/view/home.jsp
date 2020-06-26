@@ -11,28 +11,19 @@ hideURLbar(){ window.scrollTo(0,1); }
 
 </script>
 <!-- //for-mobile-apps -->
-<link href="<c:url value="/assets/user/css/bootstrap.css"/>"
-	rel="stylesheet" type="text/css" media="all" />
-<link href="<c:url value="/assets/user/css/style.css"></c:url>"
-	rel="stylesheet" type="text/css" media="all" />
+<link href="<c:url value="/assets/user/css/bootstrap.css"/>" rel="stylesheet" type="text/css" media="all" />
+<link href="<c:url value="/assets/user/css/style.css"></c:url>" rel="stylesheet" type="text/css" media="all" />
 <!-- font-awesome icons -->
-<link href="<c:url value="/assets/user/css/font-awesome.css"/>"
-	rel="stylesheet" type="text/css" media="all" />
+<link href="<c:url value="/assets/user/css/font-awesome.css"/>" rel="stylesheet" type="text/css" media="all" />
 <!-- //font-awesome icons -->
 <!-- js -->
 <script src="<c:url value="/assets/user/js/jquery-1.11.1.min.js"/>"></script>
 <!-- //js -->
-<link
-	href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic'
-	rel='stylesheet' type='text/css'>
-<link
-	href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
-	rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <!-- start-smoth-scrolling -->
-<script type="text/javascript"
-	src="<c:url value="/assets/user/js/move-top.js"/>"></script>
-<script type="text/javascript"
-	src="<c:url value="/assets/user/js/easing.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/user/js/move-top.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/user/js/easing.js"/>"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event) {
@@ -266,24 +257,23 @@ hideURLbar(){ window.scrollTo(0,1); }
 													src="<c:url value="${product.imageUrl}"/>" /></a>
 												<p>${product.name}</p>
 												<h4>
-														${product.price} <span>200.000</span>
+														${product.price} VNĐ<span>${product.originalPrice} VNĐ</span>
 												</h4>
 											</div>
 											<div class="snipcart-details top_brand_home_details">
 												<form action="checkout.html" method="post">
 													<fieldset>
-														<input type="hidden" name="cmd" value="_cart" /> <input
-															type="hidden" name="add" value="1" /> <input
-															type="hidden" name="business" value=" " /> <input
-															type="hidden" name="item_name"
-															value="Fortune Sunflower Oil" /> <input type="hidden"
-															name="amount" value="140.000" /> <input type="hidden"
-															name="discount_amount" value="1.00" /> <input
-															type="hidden" name="currency_code" value="VND" /> <input
-															type="hidden" name="return" value=" " /> <input
-															type="hidden" name="cancel_return" value=" " /> <input
-															type="submit" name="submit" value="Thêm vào giỏ hàng"
-															class="button" />
+                            <input type="hidden" name="cmd" value="_cart" />
+                            <input type="hidden" name="add" value="1" />
+                            <input type="hidden" name="business" value=" " />
+														<input type="hidden" name="id" value="${product.id}" />
+                            <input type="hidden" name="item_name" value="${product.name}" />
+                            <input type="hidden" name="amount" value="${product.price}" />
+                            <input type="hidden" name="discount_amount" value="0.00" />
+                            <input type="hidden" name="currency_code" value="VND" />
+                            <input type="hidden" name="return" value=" " />
+                            <input type="hidden" name="cancel_return" value=" " />
+                            <input type="submit" name="submit" value="Add to cart" class="button" />
 													</fieldset>
 
 												</form>

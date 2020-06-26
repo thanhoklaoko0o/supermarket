@@ -199,7 +199,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="snipcart-item block">
 					<div class="snipcart-thumb agileinfo_single_right_snipcart">
-						<h4>${product.price} VNĐ <span>250000 VNĐ</span></h4>
+						<h4>${product.price} VNĐ <span>${product.originalPrice} VNĐ</span></h4>
 					</div>
 					<div class="snipcart-details agileinfo_single_right_details">
 						<form action="#" method="post">
@@ -207,10 +207,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<input type="hidden" name="cmd" value="_cart" />
 								<input type="hidden" name="add" value="1" />
 								<input type="hidden" name="business" value=" " />
-								<input type="hidden" name="item_name" value="pulao basmati rice" />
-								<input type="hidden" name="amount" value="21.00" />
-								<input type="hidden" name="discount_amount" value="1.00" />
-								<input type="hidden" name="currency_code" value="USD" />
+								<input type="hidden" name="item_name" value="${product.name}" />
+								<input type="hidden" name="amount" value="${product.price}" />
+								<input type="hidden" name="discount_amount" value="0.00" />
+								<input type="hidden" name="currency_code" value="VND" />
 								<input type="hidden" name="return" value=" " />
 								<input type="hidden" name="cancel_return" value=" " />
 								<input type="submit" name="submit" value="Add to cart" class="button" />
@@ -243,21 +243,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										<div class="snipcart-thumb">
 											<a href="/products/${product.id}"><img src="${product.imageUrl}" alt=" " class="img-responsive"></a>
 											<p>${product.name}</p>
-											<h4>${product.price} VNĐ<span>5.00 VNĐ</span></h4>
+											<h4>${product.price} VNĐ<span>${product.originalPrice} VNĐ</span></h4>
 										</div>
 										<div class="snipcart-details">
 											<form action="#" method="post">
 												<fieldset>
-													<input type="hidden" name="cmd" value="_cart">
-													<input type="hidden" name="add" value="1">
-													<input type="hidden" name="business" value=" ">
-													<input type="hidden" name="item_name" value="knorr instant soup">
-													<input type="hidden" name="amount" value="3.00">
-													<input type="hidden" name="discount_amount" value="1.00">
-													<input type="hidden" name="currency_code" value="USD">
-													<input type="hidden" name="return" value=" ">
-													<input type="hidden" name="cancel_return" value=" ">
-													<input type="submit" name="submit" value="Add to cart" class="button">
+													<input type="hidden" name="cmd" value="_cart" />
+													<input type="hidden" name="add" value="1" />
+													<input type="hidden" name="business" value=" " />
+													<input type="hidden" name="item_name" value="${product.name}" />
+													<input type="hidden" name="amount" value="${product.price}" />
+													<input type="hidden" name="discount_amount" value="0.00" />
+													<input type="hidden" name="currency_code" value="VND" />
+													<input type="hidden" name="return" value=" " />
+													<input type="hidden" name="cancel_return" value=" " />
+													<input type="submit" name="submit" value="Add to cart" class="button" />
 												</fieldset>
 											</form>
 										</div>

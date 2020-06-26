@@ -35,6 +35,9 @@ public class Product {
 	@Column(name = "price")
 	private Long price;
 
+	@Column(name = "original_price")
+	private Long originalPrice;
+
 	@Column(length = 255)
 	private String description;
 

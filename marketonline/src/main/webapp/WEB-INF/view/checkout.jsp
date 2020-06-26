@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%><!DOCTYPE html>
 <html>
 <head>
-	<title>Sản Phẩm</title>
+	<title>Grocery Store a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Checkout :: w3layouts</title>
 	<!-- for-mobile-apps -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,23 +18,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- font-awesome icons -->
 	<link href="<c:url value="/assets/user/css/font-awesome.css"/>" rel="stylesheet" type="text/css" media="all" />
 	<!-- //font-awesome icons -->
-	<!-- js -->
-	<script src="<c:url value="/assets/user/js/jquery-1.11.1.min.js"/>"></script>
-	<!-- //js -->
+
 	<link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
 	<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="<c:url value="/assets/user/js/move-top.js"/>"></script>
-	<script type="text/javascript" src="<c:url value="/assets/user/js/easing.js"/>"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$(".scroll").click(function(event){
-				event.preventDefault();
-				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-			});
-		});
-	</script>
-	<!-- start-smoth-scrolling -->
+
 </head>
 
 <body>
@@ -79,26 +65,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<div class="clearfix"> </div>
 </div>
-<!-- script-for sticky-nav -->
-<script>
-	$(document).ready(function() {
-		var navoffeset=$(".agileits_header").offset().top;
-		$(window).scroll(function(){
-			var scrollpos=$(window).scrollTop();
-			if(scrollpos >=navoffeset){
-				$(".agileits_header").addClass("fixed");
-			}else{
-				$(".agileits_header").removeClass("fixed");
-			}
-		});
 
-	});
-</script>
-<!-- //script-for sticky-nav -->
 <div class="logo_products">
 	<div class="container">
 		<div class="w3ls_logo_products_left">
-			<h1><a href="/home"><span>Grocery</span> Store</a></h1>
+			<h1><a href="index.html"><span>Grocery</span> Store</a></h1>
 		</div>
 		<div class="w3ls_logo_products_left1">
 			<ul class="special_items">
@@ -122,8 +93,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="products-breadcrumb">
 	<div class="container">
 		<ul>
-			<li><i class="fa fa-home" aria-hidden="true"></i><a href="/home">Home</a><span>|</span></li>
-			<li>Branded Foods</li>
+			<li><i class="fa fa-home" aria-hidden="true"></i><a href="index.html">Home</a><span>|</span></li>
+			<li>Checkout</li>
 		</ul>
 	</div>
 </div>
@@ -144,65 +115,208 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 				<ul class="nav navbar-nav nav_1">
-					<c:forEach var="item" items="${categoryList}">
-						<li><a href="/products?category=${item.id}">${item.name}</a></li>
-					</c:forEach>
+					<li><a href="products.html">Branded Foods</a></li>
+					<li><a href="household.html">Households</a></li>
+					<li class="dropdown mega-dropdown active">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Veggies & Fruits<span class="caret"></span></a>
+						<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
+							<div class="w3ls_vegetables">
+								<ul>
+									<li><a href="vegetables.html">Vegetables</a></li>
+									<li><a href="vegetables.html">Fruits</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="kitchen.html">Kitchen</a></li>
+					<li><a href="short-codes.html">Short Codes</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Beverages<span class="caret"></span></a>
+						<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
+							<div class="w3ls_vegetables">
+								<ul>
+									<li><a href="drinks.html">Soft Drinks</a></li>
+									<li><a href="drinks.html">Juices</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="pet.html">Pet Food</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Frozen Foods<span class="caret"></span></a>
+						<div class="dropdown-menu mega-dropdown-menu w3ls_vegetables_menu">
+							<div class="w3ls_vegetables">
+								<ul>
+									<li><a href="frozen.html">Frozen Snacks</a></li>
+									<li><a href="frozen.html">Frozen Nonveg</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="bread.html">Bread & Bakery</a></li>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</nav>
 	</div>
 	<div class="w3l_banner_nav_right">
-		<div class="w3l_banner_nav_right_banner3">
-			<h3>Best Deals For New Products<span class="blink_me"></span></h3>
-		</div>
-		<div class="w3ls_w3l_banner_nav_right_grid padding-top-xl">
-			<h3>Popular Brands</h3>
-			<div class="w3ls_w3l_banner_nav_right_grid1">
-				<c:forEach var="product" items="${productList}">
-					<div class="col-md-3 w3ls_w3l_banner_left padding-top-lg">
-						<div class="hover14 column">
-							<div class="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
-								<div class="agile_top_brand_left_grid_pos">
-									<img src="/assets/user/images/offer.png" alt=" " class="img-responsive">
-								</div>
-								<div class="agile_top_brand_left_grid1">
-									<figure>
-										<div class="snipcart-item block">
-											<div class="snipcart-thumb">
-												<a href="/products/${product.id}"><img src="${product.imageUrl}" alt=" " class="img-responsive"></a>
-												<p>${product.name}</p>
-												<h4>${product.price} VNĐ<span>${product.originalPrice} VNĐ</span></h4>
-											</div>
-											<div class="snipcart-details">
-												<form action="#" method="post">
-													<fieldset>
-                            <input type="hidden" name="cmd" value="_cart" />
-                            <input type="hidden" name="add" value="1" />
-                            <input type="hidden" name="business" value=" " />
-                            <input type="hidden" name="item_name" value="${product.name}" />
-                            <input type="hidden" name="amount" value="${product.price}" />
-                            <input type="hidden" name="discount_amount" value="0.00" />
-                            <input type="hidden" name="currency_code" value="VND" />
-                            <input type="hidden" name="return" value=" " />
-                            <input type="hidden" name="cancel_return" value=" " />
-                            <input type="submit" name="submit" value="Add to cart" class="button" />
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</figure>
+		<!-- about -->
+		<div class="privacy about">
+			<h3>Chec<span>kout</span></h3>
+
+			<div class="checkout-right">
+				<h4>Your shopping cart contains: <span>3 Products</span></h4>
+				<table class="timetable_sub">
+					<thead>
+					<tr>
+						<th>SL No.</th>
+						<th>Product</th>
+						<th>Quality</th>
+						<th>Product Name</th>
+
+						<th>Price</th>
+						<th>Remove</th>
+					</tr>
+					</thead>
+					<tbody><tr class="rem1">
+						<td class="invert">1</td>
+						<td class="invert-image"><a href="single.html"><img src="images/1.png" alt=" " class="img-responsive"></a></td>
+						<td class="invert">
+							<div class="quantity">
+								<div class="quantity-select">
+									<div class="entry value-minus">&nbsp;</div>
+									<div class="entry value"><span>1</span></div>
+									<div class="entry value-plus active">&nbsp;</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</c:forEach>
-				<div class="clearfix"> </div>
+						</td>
+						<td class="invert">Fortune Sunflower Oil</td>
+
+						<td class="invert">$290.00</td>
+						<td class="invert">
+							<div class="rem">
+								<div class="close1"> </div>
+							</div>
+
+						</td>
+					</tr>
+					<tr class="rem2">
+						<td class="invert">2</td>
+						<td class="invert-image"><a href="single.html"><img src="images/3.png" alt=" " class="img-responsive"></a></td>
+						<td class="invert">
+							<div class="quantity">
+								<div class="quantity-select">
+									<div class="entry value-minus">&nbsp;</div>
+									<div class="entry value"><span>1</span></div>
+									<div class="entry value-plus active">&nbsp;</div>
+								</div>
+							</div>
+						</td>
+						<td class="invert">Basmati Rise (5 Kg)</td>
+
+						<td class="invert">$250.00</td>
+						<td class="invert">
+							<div class="rem">
+								<div class="close2"> </div>
+							</div>
+
+						</td>
+					</tr>
+					<tr class="rem3">
+						<td class="invert">3</td>
+						<td class="invert-image"><a href="single.html"><img src="images/2.png" alt=" " class="img-responsive"></a></td>
+						<td class="invert">
+							<div class="quantity">
+								<div class="quantity-select">
+									<div class="entry value-minus">&nbsp;</div>
+									<div class="entry value"><span>1</span></div>
+									<div class="entry value-plus active">&nbsp;</div>
+								</div>
+							</div>
+						</td>
+						<td class="invert">Pepsi Soft Drink (2 Ltr)</td>
+
+						<td class="invert">$15.00</td>
+						<td class="invert">
+							<div class="rem">
+								<div class="close3"> </div>
+							</div>
+
+						</td>
+					</tr>
+
+					</tbody></table>
 			</div>
+			<div class="checkout-left">
+				<div class="col-md-4 checkout-left-basket">
+					<h4>Continue to basket</h4>
+					<ul>
+						<li>Product1 <i>-</i> <span>$15.00 </span></li>
+						<li>Product2 <i>-</i> <span>$25.00 </span></li>
+						<li>Product3 <i>-</i> <span>$29.00 </span></li>
+						<li>Total Service Charges <i>-</i> <span>$15.00</span></li>
+						<li>Total <i>-</i> <span>$84.00</span></li>
+					</ul>
+				</div>
+				<div class="col-md-8 address_form_agile">
+					<h4>Add a new Details</h4>
+					<form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+						<section class="creditly-wrapper wthree, w3_agileits_wrapper">
+							<div class="information-wrapper">
+								<div class="first-row form-group">
+									<div class="controls">
+										<label class="control-label">Full name: </label>
+										<input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+									</div>
+									<div class="w3_agileits_card_number_grids">
+										<div class="w3_agileits_card_number_grid_left">
+											<div class="controls">
+												<label class="control-label">Mobile number:</label>
+												<input class="form-control" type="text" placeholder="Mobile number">
+											</div>
+										</div>
+										<div class="w3_agileits_card_number_grid_right">
+											<div class="controls">
+												<label class="control-label">Landmark: </label>
+												<input class="form-control" type="text" placeholder="Landmark">
+											</div>
+										</div>
+										<div class="clear"> </div>
+									</div>
+									<div class="controls">
+										<label class="control-label">Town/City: </label>
+										<input class="form-control" type="text" placeholder="Town/City">
+									</div>
+									<div class="controls">
+										<label class="control-label">Address type: </label>
+										<select class="form-control option-w3ls">
+											<option>Office</option>
+											<option>Home</option>
+											<option>Commercial</option>
+
+										</select>
+									</div>
+								</div>
+								<button class="submit check_out">Delivery to this Address</button>
+							</div>
+						</section>
+					</form>
+					<div class="checkout-right-basket">
+						<a href="payment.html">Make a Payment <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+					</div>
+				</div>
+
+				<div class="clearfix"> </div>
+
+			</div>
+
 		</div>
+		<!-- //about -->
 	</div>
 	<div class="clearfix"></div>
 </div>
 <!-- //banner -->
+
+
 <!-- newsletter -->
 <div class="newsletter">
 	<div class="container">
@@ -289,6 +403,75 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 </div>
 <!-- //footer -->
+<!-- js -->
+<script src="<c:url value="/assets/user/js/jquery-1.11.1.min.js"/>"></script>
+<!--quantity-->
+<script>
+	$('.value-plus').on('click', function(){
+		var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)+1;
+		divUpd.text(newVal);
+	});
+
+	$('.value-minus').on('click', function(){
+		var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10)-1;
+		if(newVal>=1) divUpd.text(newVal);
+	});
+</script>
+<!--quantity-->
+<script>$(document).ready(function(c) {
+	$('.close1').on('click', function(c){
+		$('.rem1').fadeOut('slow', function(c){
+			$('.rem1').remove();
+		});
+	});
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.close2').on('click', function(c){
+		$('.rem2').fadeOut('slow', function(c){
+			$('.rem2').remove();
+		});
+	});
+});
+</script>
+<script>$(document).ready(function(c) {
+	$('.close3').on('click', function(c){
+		$('.rem3').fadeOut('slow', function(c){
+			$('.rem3').remove();
+		});
+	});
+});
+</script>
+
+<!-- //js -->
+<!-- script-for sticky-nav -->
+<script>
+	$(document).ready(function() {
+		var navoffeset=$(".agileits_header").offset().top;
+		$(window).scroll(function(){
+			var scrollpos=$(window).scrollTop();
+			if(scrollpos >=navoffeset){
+				$(".agileits_header").addClass("fixed");
+			}else{
+				$(".agileits_header").removeClass("fixed");
+			}
+		});
+
+	});
+</script>
+<!-- //script-for sticky-nav -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="<c:url value="/assets/user/js/move-top.js"/>"></script>
+<script type="text/javascript" src="<c:url value="/assets/user/js/easing.js"/>"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
 <!-- Bootstrap Core JavaScript -->
 <script src="<c:url value="/assets/user/js/bootstrap.min.js"/>"></script>
 <script>
