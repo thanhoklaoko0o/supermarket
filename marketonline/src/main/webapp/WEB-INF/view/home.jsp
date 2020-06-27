@@ -67,9 +67,24 @@ hideURLbar(){ window.scrollTo(0,1); }
 					<div class="mega-dropdown-menu">
 						<div class="w3ls_vegetables">
 							<ul class="dropdown-menu drp-mnu">
-								<li><a href="login.html">Đăng nhập</a></li>
-								<li><a href="login.html">Đăng ký</a></li>
-							</ul>
+								<c:set var="username" scope="session" value="${username}" />
+								<c:if test="${username != null}">
+									<li><a href="/logout">Đăng xuất</a></li>
+								</c:if>
+								<c:if test="${username == null}">
+									<li><a href="/login">Đăng nhập</a></li>
+								</c:if>
+								<%-- <c:choose>
+											<c:when test="${username != null }">
+										<li><a href="/login">Đăng nhập</a></li>
+									</c:when>
+
+									<c:otherwise>
+										<li><a href="/logout">Đăng xuất</a></li>
+									</c:otherwise>
+								</c:choose> --%>
+							
+									</ul>
 						</div>
 					</div></li>
 			</ul>

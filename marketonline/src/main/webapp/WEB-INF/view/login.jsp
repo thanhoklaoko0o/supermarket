@@ -70,7 +70,7 @@
 					// If result = false, UserName exsts 
 					if(value == false){
 						// Message when UserName exists
-						$("#kqCheckName").text("Ten tai khoan da ton tai trong he thong, dang ky that bai !");
+						$("#kqCheckName").text("Dang Ky That Bai !");
 					// If result = true
 					}else{
 						$("#kqCheckName").text("Dang Ky Thanh Cong. Moi Ban Dang Nhap")
