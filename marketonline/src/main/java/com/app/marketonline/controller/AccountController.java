@@ -19,16 +19,17 @@ public class AccountController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
-	
+
 	@PostMapping("/login")
 	public String checkLogin(@ModelAttribute User userModel, Model model, HttpSession httpSession) {
-		
-		User user = userService.findUserByUserNameAndPassword(userModel.getUserName().trim(), userModel.getPassword().trim());
+
+		User user = userService.findUserByUserNameAndPassword(userModel.getUserName().trim(),
+				userModel.getPassword().trim());
 		if (user == null) {
 			model.addAttribute("message", "Username hoac password khong dung. Dang nhap that bai !");
 			return "login";
@@ -40,25 +41,21 @@ public class AccountController {
 		}
 		return "redirect:home";
 	}
-	
-	@PostMapping("/kiem-tra")
-	@ResponseBody
-	public boolean checkUserName(@RequestParam String userName) {
-		User user = userService.findUserByUserName(userName);
-		if (user != null) {
-			return true;
-		}
-		return false;
-	}
-	
+
 	@PostMapping("/dang-ky")
 	@ResponseBody
-	public boolean dangKy(@ModelAttribute User userModel, Model model) {
-		User user = userService.findUserByUserName(userModel.getUserName());
+	public boolean dangKy(@RequestParam String userName, @RequestParam String password) {
+		User user = userService.findUserByUserName(userName);
+		if (userName.isEmpty() || password.isEmpty()) {
+			return false;
+		}
 		if (user != null) {
 			return false;
 		}
-		userService.addUser(userModel);
+		User userEn = new User();
+		userEn.setUserName(userName);
+		userEn.setPassword(password);
+		userService.addUser(userEn);
 		return true;
 	}
 }

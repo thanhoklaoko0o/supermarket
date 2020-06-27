@@ -45,15 +45,41 @@
 				  <div class="form">
 					<h2>Create an account</h2>
 				<!-- 	<form action="#" method="post"> -->
-					  <input type="text" name="Username" placeholder="Username">
-					  <input type="password" name="Password" placeholder="Password">
-					  <button class="btn btn-success">Register</button>
+						<label id="kqCheckName" style="color:red"></label>
+					  <input type="text" name="Username" placeholder="Username" id="Username">
+					  <input type="password" name="Password" placeholder="Password" id="Password">
+					  <button class="btn btn-success" onclick="dangky()">Register</button>
 					<!-- </form> -->
 				  </div>
 				</div>
 			</div>
 		</div>
-		<script>
+	<script>
+		function dangky() {
+			$("#kqCheckName").text("");
+			var userName = document.getElementById("Username").value;
+			var password = document.getElementById("Password").value;
+			$.ajax({
+				url : "/dang-ky",
+				type : "POST",
+				data : {
+					userName : userName,
+					password : password
+				},
+				success : function(value) {
+					// If result = false, UserName exsts 
+					if(value == false){
+						// Message when UserName exists
+						$("#kqCheckName").text("Ten tai khoan da ton tai trong he thong, dang ky that bai !");
+					// If result = true
+					}else{
+						$("#kqCheckName").text("Dang Ky Thanh Cong. Moi Ban Dang Nhap")
+					}
+				}
+			})
+		}
+	</script>
+	<script>
 				$('.toggle').click(function(){
 				  // Switches the Icon
 				  $(this).children('i').toggleClass('fa-pencil');
