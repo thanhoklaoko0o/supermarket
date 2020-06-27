@@ -27,8 +27,8 @@
 			<div class="col-sm-3 sidenav">
 				<h4>Quan Ly</h4>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="#section2">San Pham</a></li>
-					<li><a href="#section3">Don Hang</a></li>
+					<li><a href="/trang-quan-ly">San Pham</a></li>
+					<li><a href="/bill-management">Don Hang</a></li>
 				</ul>
 				<br>
 

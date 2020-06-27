@@ -44,7 +44,7 @@ public class Product {
 	@Column(name = "date_created")
 	private Date dateCreated;
 
-	@OneToOne(cascade=CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="category")
 	private Category category;
 }
