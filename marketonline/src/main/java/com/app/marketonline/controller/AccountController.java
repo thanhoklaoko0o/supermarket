@@ -41,18 +41,6 @@ public class AccountController {
 		return "redirect:home";
 	}
 	
-	@GetMapping("/trang-quan-ly")
-	public String admin(HttpSession httpSession) {
-		if(httpSession.getAttribute("userSession") != null) {
-			User user = (User) httpSession.getAttribute("userSession");
-			String role = user.getRole();
-			if (role.equals("Admin")) {
-				return "admin";
-			}
-		}
-		return "redirect:login";
-	}
-	
 	@PostMapping("/kiem-tra")
 	@ResponseBody
 	public boolean checkUserName(@RequestParam String userName) {

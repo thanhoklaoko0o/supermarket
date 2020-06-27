@@ -35,4 +35,11 @@ public class ProductService {
 	public Product getProductById(Integer id) {
 		return productRepository.findById(id).get();
 	}
+
+	public void saveProduct(Product product) {
+		productRepository.save(product);
+	}
+	public void deleteProduct(Product product) {
+		productRepository.delete(product);
+	}
 }

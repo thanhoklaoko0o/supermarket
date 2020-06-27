@@ -8,8 +8,10 @@ public class Cart {
 	private Integer idProduct;
 	
 	private String nameProduct;
+
+	private String imageUrl;
 	
-	private int quatity;
+	private int quantity;
 	
 	private Long price;
 }

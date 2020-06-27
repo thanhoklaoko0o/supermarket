@@ -176,16 +176,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<div class="snipcart-details">
 												<form action="#" method="post">
 													<fieldset>
-                            <input type="hidden" name="cmd" value="_cart" />
-                            <input type="hidden" name="add" value="1" />
-                            <input type="hidden" name="business" value=" " />
-                            <input type="hidden" name="item_name" value="${product.name}" />
-                            <input type="hidden" name="amount" value="${product.price}" />
-                            <input type="hidden" name="discount_amount" value="0.00" />
-                            <input type="hidden" name="currency_code" value="VND" />
-                            <input type="hidden" name="return" value=" " />
-                            <input type="hidden" name="cancel_return" value=" " />
-                            <input type="submit" name="submit" value="Add to cart" class="button" />
+														<input type="hidden" name="cmd" value="_cart" />
+														<input type="hidden" name="add" value="1" />
+														<input type="hidden" name="business" value=" " />
+														<input type="hidden" name="id" value="${product.id}" />
+														<input type="hidden" name="item_name" value="${product.name}" />
+														<input type="hidden" name="amount" value="${product.price}" />
+														<input type="hidden" name="discount_amount" value="0.00" />
+														<input type="hidden" name="currency_code" value="VND" />
+														<input type="hidden" name="return" value=" " />
+														<input type="hidden" name="cancel_return" value=" " />
+														<input type="submit" name="submit" value="Add to cart" class="button" />
 													</fieldset>
 												</form>
 											</div>

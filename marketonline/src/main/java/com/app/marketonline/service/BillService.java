@@ -1,0 +1,20 @@
+package com.app.marketonline.service;
+
+import com.app.marketonline.entity.Bill;
+import com.app.marketonline.repository.BillRepository;
+import com.app.marketonline.repository.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+
+@Service
+@Transactional
+public class BillService {
+	@Autowired
+	private BillRepository billRepository;
+
+	public void saveBill(Bill bill) {
+		billRepository.save(bill);
+	}
+}

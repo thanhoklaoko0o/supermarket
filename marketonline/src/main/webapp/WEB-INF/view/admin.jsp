@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,22 +39,43 @@
 					<small>Cua Hang Sieu Thi</small>
 				</h4>
 				<hr>
-				<form action="/action_page.php">
+				<form action="/add-product" method="post">
 					<div class="form-group">
-						<label for="email">Ten San Pham:</label> <input type="email"
-							class="form-control" id="email">
+						<label>Ten San Pham:</label>
+						<input type="text" class="form-control" name="name"/>
 					</div>
 					<div class="form-group">
-						<label for="email">Ten San Pham:</label> <input type="email"
-							class="form-control" id="email">
+						<label>Quantity:</label>
+						<input type="text" class="form-control" name="quantity"/>
 					</div>
 					<div class="form-group">
-						<label for="email">Ten San Pham:</label> <input type="email"
-							class="form-control" id="email">
+						<label>Origin:</label>
+						<input type="text" class="form-control" name="origin"/>
 					</div>
 					<div class="form-group">
-						<label for="email">Anh:</label> <input type="email"
-							class="form-control" id="email">
+						<label>Original Price</label>
+						<input type="text" class="form-control" name="originalPrice"/>
+					</div>
+					<div class="form-group">
+						<label>Price</label>
+						<input type="text" class="form-control" name="price"/>
+					</div>
+					<div class="form-group">
+						<label>Image</label>
+						<input type="file" class="form-control"  name="imageUrl"/>
+					</div>
+					<div class="form-group">
+						<label>Description</label>
+						<textarea type="text" class="form-control"  name="description"></textarea>
+					</div>
+					<div class="form-group">
+						<label>Category</label>
+						<select name="category" class="form-control">
+							<c:forEach var="category" items="${categoryList}">
+								<option value="${category.id}">${category.name}</option>
+							</c:forEach>
+						</select>
+
 					</div>
 
 					<button type="submit" class="btn btn-default">Add</button>
@@ -61,27 +84,22 @@
 				<table class="table table-condensed">
 					<thead>
 						<tr>
-							<th>Firstname</th>
-							<th>Lastname</th>
-							<th>Email</th>
+							<th>Product Name</th>
+							<th>Quantity</th>
+							<th>Image</th>
+							<th>Delete</th>
 						</tr>
 					</thead>
 					<tbody>
+					<c:forEach var="product" items="${productList}">
 						<tr>
-							<td>John</td>
-							<td>Doe</td>
-							<td>john@example.com</td>
+							<td>${product.name}</td>
+							<td>${product.quantity}</td>
+							<td><img src="${product.imageUrl}" alt=" " class="img-responsive" style="width: 12%"></td>
+							<td><a href="/delete-product?id=${product.id}">Delete</a></td>
 						</tr>
-						<tr>
-							<td>Mary</td>
-							<td>Moe</td>
-							<td>mary@example.com</td>
-						</tr>
-						<tr>
-							<td>July</td>
-							<td>Dooley</td>
-							<td>july@example.com</td>
-						</tr>
+					</c:forEach>
+
 					</tbody>
 				</table>
 				<hr>

@@ -23,7 +23,7 @@ public class HomeController {
 	@Autowired
 	private CategoryService categoryService;
 
-	@GetMapping("/home")
+	@GetMapping(value = {"/home", "/"})
 	public String index(ModelMap model) {
 		model.addAttribute("categoryList", categoryService.getAll());
 		model.addAttribute("topFourProduct", productService.getTop4Product());

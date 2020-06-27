@@ -19,19 +19,19 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", unique = true, nullable = false)
 	private Integer id;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "quantity")
 	private Integer quantity;
-	
+
 	@Column(name = "origin")
 	private String origin;
-	
+
 	@Column(name = "imageUrl")
 	private String imageUrl;
-	
+
 	@Column(name = "price")
 	private Long price;
 
@@ -42,9 +42,9 @@ public class Product {
 	private String description;
 
 	@Column(name = "date_created")
-    private Date dateCreated;
-	
+	private Date dateCreated;
+
 	@OneToOne(cascade=CascadeType.ALL)
-//	@JoinColumn(name="category")
+	@JoinColumn(name="category")
 	private Category category;
 }
