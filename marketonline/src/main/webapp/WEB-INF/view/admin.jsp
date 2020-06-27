@@ -27,8 +27,8 @@
 			<div class="col-sm-3 sidenav">
 				<h4>Quan Ly</h4>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="#section2">San Pham</a></li>
-					<li><a href="#section3">Don Hang</a></li>
+					<li><a href="/trang-quan-ly">San Pham</a></li>
+					<li><a href="/bill-management">Don Hang</a></li>
 				</ul>
 				<br>
 
@@ -42,31 +42,34 @@
 				<form action="/add-product" method="post">
 					<div class="form-group">
 						<label>Ten San Pham:</label>
-						<input type="text" class="form-control" name="name"/>
+						<input type="text" class="form-control" name="name" value="${updateProduct.name}"/>
+						<input type="hidden" class="form-control" name="id" value="${updateProduct.id}"/>
 					</div>
 					<div class="form-group">
 						<label>Quantity:</label>
-						<input type="text" class="form-control" name="quantity"/>
+						<input type="text" class="form-control" name="quantity" value="${updateProduct.quantity}"/>
 					</div>
 					<div class="form-group">
 						<label>Origin:</label>
-						<input type="text" class="form-control" name="origin"/>
+						<input type="text" class="form-control" name="origin" value="${updateProduct.origin}"/>
 					</div>
 					<div class="form-group">
 						<label>Original Price</label>
-						<input type="text" class="form-control" name="originalPrice"/>
+						<input type="text" class="form-control" name="originalPrice" value="${updateProduct.originalPrice}"/>
 					</div>
 					<div class="form-group">
 						<label>Price</label>
-						<input type="text" class="form-control" name="price"/>
+						<input type="text" class="form-control" name="price" value="${updateProduct.price}"/>
 					</div>
 					<div class="form-group">
 						<label>Image</label>
-						<input type="file" class="form-control"  name="imageUrl"/>
+						<input type="file" class="form-control"  name="imageUrl" value="${updateProduct.imageUrl}"/>
 					</div>
 					<div class="form-group">
 						<label>Description</label>
-						<textarea type="text" class="form-control"  name="description"></textarea>
+						<textarea type="text" class="form-control"  name="description">
+							${updateProduct.description}
+						</textarea>
 					</div>
 					<div class="form-group">
 						<label>Category</label>
@@ -87,7 +90,7 @@
 							<th>Product Name</th>
 							<th>Quantity</th>
 							<th>Image</th>
-							<th>Delete</th>
+							<th>Update/Delete</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -96,7 +99,10 @@
 							<td>${product.name}</td>
 							<td>${product.quantity}</td>
 							<td><img src="${product.imageUrl}" alt=" " class="img-responsive" style="width: 12%"></td>
-							<td><a href="/delete-product?id=${product.id}">Delete</a></td>
+							<td>
+								<a href="/update-product-view?id=${product.id}">Update</a> /
+								<a href="/delete-product?id=${product.id}">Delete</a>
+							</td>
 						</tr>
 					</c:forEach>
 
