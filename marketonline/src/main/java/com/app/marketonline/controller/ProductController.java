@@ -24,7 +24,6 @@ public class ProductController {
 		modelMap.addAttribute("categoryList", categoryService.getAll());
 		modelMap.addAttribute("productList", categoryService.getCategoryById(categoryId).getProducts());
 
-
 		return "products";
 	}
 
@@ -36,5 +35,12 @@ public class ProductController {
 		modelMap.addAttribute("product", product);
 		modelMap.addAttribute("topFourProduct", productService.getTop4Product());
 		return "product_detail";
+	}
+
+	@GetMapping("/s")
+	public String searchProduct(ModelMap modelMap,  @RequestParam(name = "key") String nameProduct) {
+		modelMap.addAttribute("categoryList", categoryService.getAll());
+		modelMap.addAttribute("productList", productService.getAllByNameContaining(nameProduct));
+		return "products";
 	}
 }

@@ -43,11 +43,12 @@ hideURLbar(){ window.scrollTo(0,1); }
 			<a href="products.html">Ưu đãi đặc biệt hôm nay !</a>
 		</div>
 		<div class="w3l_search">
-			<form action="#" method="post">
-				<input type="text" name="Product" value="Tìm kiếm..."
+			<form action="/s" method="get">
+				<input type="text" name="key" value="Tìm kiếm..."
 					onfocus="this.value = '';"
 					onblur="if (this.value == '') {this.value = 'Tìm kiếm...';}"
-					required=""> <input type="submit" value=" ">
+					required="">
+				<input type="submit" value=" ">
 			</form>
 		</div>
 		<div class="product_list_header">
