@@ -39,7 +39,8 @@ public class AccountController {
 		if (user.getRole().equals("Admin")) {
 			return "redirect:trang-quan-ly";
 		}
-		return "redirect:home";
+		model.addAttribute("username", user.getUserName());
+		return "forward:home";
 	}
 
 	@PostMapping("/dang-ky")
@@ -57,5 +58,13 @@ public class AccountController {
 		userEn.setPassword(password);
 		userService.addUser(userEn);
 		return true;
+	}
+	
+	@GetMapping("/logout")
+	public String dangXuat(HttpSession httpSession) {
+		if (httpSession.getAttribute("userSession") != null) {
+			httpSession.removeAttribute("userSession");
+		}
+		return "login";
 	}
 }
